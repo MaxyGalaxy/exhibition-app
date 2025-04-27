@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import './globals.css'
-import { getBasePath } from '@/utils/path-utils'
+import { getAssetPath } from '@/utils/path-utils'
 
 export const metadata: Metadata = {
   title: 'Musikalische Zeitreise',
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  // Basispfad für Ressourcen
-  const basePath = getBasePath();
+  // Basispfad für Ressourcen - wir extrahieren den Basis-Pfad aus der Asset-Pfad-Funktion
+  const basePath = process.env.NODE_ENV === 'production' ? '/exhibition-app' : '';
   
   return (
     <html lang="de">

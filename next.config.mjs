@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Diese Optionen sind wichtig für GitHub Pages
-  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/exhibition-app' : '',
   images: {
     unoptimized: true,
-  },
+  }
 }
 
 module.exports = nextConfig
