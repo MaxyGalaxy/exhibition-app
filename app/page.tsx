@@ -12,7 +12,7 @@ import { useActivity } from "@/contexts/activity-context"
 
 // Zeitplan für Bildschirm Ein/Aus - Format: [Stunde, Minute]
 const SCREEN_SCHEDULE = {
-  turnOff: [18, 0],  // 18:00 Uhr ausschalten
+  turnOff: [23, 0],  // 23:00 Uhr ausschalten
   turnOn: [9, 0]     // 9:00 Uhr einschalten
 };
 

@@ -80,28 +80,7 @@ export default function LoadingScreen({ onClose }: LoadingScreenProps) {
     }
   }, [isLoading, unavailableFiles, missingMetadata, missingCovers]);
 
-  // Einfacher Ladebildschirm für die Produktionsumgebung
-  if (process.env.NODE_ENV !== 'development') {
-    return (
-      <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
-        <div className="w-96 max-w-[80%] text-center">
-          <h1 className="text-2xl font-bold mb-8">Ausstellungs-App</h1>
-          
-          {/* Fortschrittsbalken */}
-          <div className="mb-8">
-            <Progress value={progress} className="h-2" />
-            <p className="text-sm text-gray-500 mt-2">{isLoading ? `${Math.round(progress)}%` : "Bereit"}</p>
-          </div>
-          
-          <p className="text-lg">
-            {isLoading ? "Mediendateien werden vorbereitet..." : "Bereit zum Starten"}
-          </p>
-        </div>
-      </div>
-    )
-  }
-
-  // Detaillierter Ladebildschirm für die Entwicklungsumgebung
+  // Detaillierter Ladebildschirm (wird immer angezeigt, unabhängig von der Umgebung)
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Kopfbereich mit X-Schaltfläche */}
@@ -216,6 +195,15 @@ export default function LoadingScreen({ onClose }: LoadingScreenProps) {
           </Tabs>
         )}
       </div>
+
+      {/* Fußzeile */}
+      {!isLoading && (
+        <div className="p-4 border-t border-gray-200 bg-gray-50 flex justify-end">
+          <Button onClick={onClose} className="bg-[#b41f2a] hover:bg-[#a01824]">
+            Anwendung starten
+          </Button>
+        </div>
+      )}
     </div>
   )
 }
