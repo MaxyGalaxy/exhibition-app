@@ -1,22 +1,26 @@
+"use client"
+
+import { getAssetPath } from "@/utils/path-utils";
+
 // Datumstring (DD.MM.YYYY) in ein Date-Objekt für die Sortierung umwandeln
 const parseGermanDate = (dateStr: string): Date => {
-  if (!dateStr) return new Date(0) // Leere Daten behandeln
-  const year = Number.parseInt(dateStr)
+  if (!dateStr) return new Date(0); // Leere Daten behandeln
+  const year = Number.parseInt(dateStr);
   if (!isNaN(year)) {
-    return new Date(year, 0, 1)
+    return new Date(year, 0, 1);
   }
-  return new Date(0)
-}
+  return new Date(0);
+};
 
 // Sortierfunktion für chronologische Reihenfolge
 const sortByDate = (a: any, b: any): number => {
-  const dateA = parseGermanDate(a.erschienen)
-  const dateB = parseGermanDate(b.erschienen)
-  return dateA.getTime() - dateB.getTime()
-}
+  const dateA = parseGermanDate(a.erschienen);
+  const dateB = parseGermanDate(b.erschienen);
+  return dateA.getTime() - dateB.getTime();
+};
 
-// Aktualisierte Audiodateien mit den bereitgestellten Daten - Feld 'dateiname' entfernt
-export const DEFAULT_COVER_IMAGE = "/images/audio-placeholder.jpg";
+// Aktualisierte Audiodateien mit relativen Pfaden
+export const DEFAULT_COVER_IMAGE = getAssetPath("/images/audio-placeholder.jpg");
 
 export const audioFiles = [
   {
@@ -28,7 +32,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "1955",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/01-Viva_la_musica--Heitere_Chormusik_(und_anderes)(1995).mp3",
+    file: getAssetPath("/audio/01-Viva_la_musica--Heitere_Chormusik_(und_anderes)(1995).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 180,
   },
@@ -41,7 +45,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "1955",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/02-Es_ist_ein_Ros_entsprungen_(1955).mp3",
+    file: getAssetPath("/audio/02-Es_ist_ein_Ros_entsprungen_(1955).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 210,
   },
@@ -54,7 +58,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "1960",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/03-Weihnachtsoratorium--Jauchzet_frohlocket_(1960).mp3",
+    file: getAssetPath("/audio/03-Weihnachtsoratorium--Jauchzet_frohlocket_(1960).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 195,
   },
@@ -67,7 +71,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "1976",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/04-Requiem--Requiem_aeternam_(1976).mp3",
+    file: getAssetPath("/audio/04-Requiem--Requiem_aeternam_(1976).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 240,
   },
@@ -80,7 +84,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Ensemble '76 Stuttgart",
     erschienen: "1983",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/05-Weihnachtsoratorium--Lasset_uns_nun_gehen_gen_Bethlehem_(1983).mp3",
+    file: getAssetPath("/audio/05-Weihnachtsoratorium--Lasset_uns_nun_gehen_gen_Bethlehem_(1983).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 165,
   },
@@ -93,7 +97,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Gerhard Wilhelm",
     erschienen: "",
     chorleiter: "Gerhard Wilhelm",
-    file: "/audio/06-Chorprobe_mit_Gerhard_Wilhelm.mp3",
+    file: getAssetPath("/audio/06-Chorprobe_mit_Gerhard_Wilhelm.mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 175,
   },
@@ -106,7 +110,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Collegium Instrumentale Stuttgart",
     erschienen: "1990",
     chorleiter: "Eckard Weyand",
-    file: "/audio/07-Johannes-Passion--Herr_unser_Herrscher_(1990).mp3",
+    file: getAssetPath("/audio/07-Johannes-Passion--Herr_unser_Herrscher_(1990).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 220,
   },
@@ -119,7 +123,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Collegium Instrumentale Stuttgart",
     erschienen: "1990",
     chorleiter: "Eckard Weyand",
-    file: "/audio/08_Johannes-Passion--Ach_Herr_lass_dein_lieb_Engelein_(1990).mp3",
+    file: getAssetPath("/audio/08_Johannes-Passion--Ach_Herr_lass_dein_lieb_Engelein_(1990).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 190,
   },
@@ -132,7 +136,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Junges Kammerorchester Stuttgart",
     erschienen: "2001",
     chorleiter: "Hanns-Friedrich Kunz",
-    file: "/audio/09-The_Messiah--Halleluja_(2001).mp3",
+    file: getAssetPath("/audio/09-The_Messiah--Halleluja_(2001).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 205,
   },
@@ -145,7 +149,7 @@ export const audioFiles = [
     interpreten: 'Stuttgarter Hymnus-Chorknaben, Ensemble „musica viva Stuttgart"',
     erschienen: "2005",
     chorleiter: "Hanns-Friedrich Kunz",
-    file: "/audio/10-Requiem--Lacrimosa_(2005).mp3",
+    file: getAssetPath("/audio/10-Requiem--Lacrimosa_(2005).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 185,
   },
@@ -158,7 +162,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Handel's Company",
     erschienen: "2017",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/11-Johannes-Passion--Herr_unser_Herrscher_(2017).mp3",
+    file: getAssetPath("/audio/11-Johannes-Passion--Herr_unser_Herrscher_(2017).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 210,
   },
@@ -171,7 +175,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "2018",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/12-Vater_unser_(2018).mp3",
+    file: getAssetPath("/audio/12-Vater_unser_(2018).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 195,
   },
@@ -184,7 +188,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "2019",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/13-Deutsche_Messe--Credo_(2019).mp3",
+    file: getAssetPath("/audio/13-Deutsche_Messe--Credo_(2019).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 180,
   },
@@ -197,7 +201,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben",
     erschienen: "2019",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/14-Psalmen Davids--Jauchzet_dem_Herren_alle_Welt_(2019).mp3",
+    file: getAssetPath("/audio/14-Psalmen Davids--Jauchzet_dem_Herren_alle_Welt_(2019).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 210,
   },
@@ -210,7 +214,7 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Handel's Company, Trompetenensemble Wolfgang Bauer",
     erschienen: "2020",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/15-Weihnachtsoratorium--Jauchzet_frohlocket_(2020).mp3",
+    file: getAssetPath("/audio/15-Weihnachtsoratorium--Jauchzet_frohlocket_(2020).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 195,
   },
@@ -223,11 +227,11 @@ export const audioFiles = [
     interpreten: "Stuttgarter Hymnus-Chorknaben, Handel's Company",
     erschienen: "2020",
     chorleiter: "Rainer Johannes Homburg",
-    file: "/audio/16-Weihnachtsoratorium--Lasset_uns_nun_gehen_gen_Bethlehem_(2020).mp3",
+    file: getAssetPath("/audio/16-Weihnachtsoratorium--Lasset_uns_nun_gehen_gen_Bethlehem_(2020).mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 220,
   },
-].sort(sortByDate)
+].sort(sortByDate);
 
 /**
  * Alle Audiodateipfade aus dem Array der Audiodateien abrufen
