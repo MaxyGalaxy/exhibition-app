@@ -95,7 +95,7 @@ export const audioFiles = [
     komponist: "",
     wvzNummer: "",
     interpreten: "Stuttgarter Hymnus-Chorknaben, Gerhard Wilhelm",
-    erschienen: "",
+    erschienen: "1983",
     chorleiter: "Gerhard Wilhelm",
     file: getAssetPath("/audio/06-Chorprobe_mit_Gerhard_Wilhelm.mp3"),
     coverImage: DEFAULT_COVER_IMAGE,
@@ -231,6 +231,19 @@ export const audioFiles = [
     coverImage: DEFAULT_COVER_IMAGE,
     duration: 220,
   },
+  {
+    id: 17,
+    titel: "Herr, unser Herrscher",
+    werk: "Johannes-Passion",
+    komponist: "Johann Sebastian Bach",
+    wvzNummer: "BWV 245",
+    interpreten: "Stuttgarter Hymnus-Chorknaben, Stuttgarter Kammerorchester",
+    erschienen: "1975",
+    chorleiter: "Gerhard Wilhelm\nDirigent: Karl Münchinger",
+    file: getAssetPath("/audio/17-Johannes-Passion--Herr_unser_Herrscher_(1975).mp3"),
+    coverImage: DEFAULT_COVER_IMAGE,
+    duration: 610,
+  },
 ].sort(sortByDate);
 
 /**

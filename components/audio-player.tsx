@@ -332,7 +332,7 @@ export function AudioPlayer({ onReset }: { onReset: () => void }) {
                 </div>
 
                 <div>
-                  <div className="text-sm font-medium text-gray-600 mb-1">Erschienen</div>
+                  <div className="text-sm font-medium text-gray-600 mb-1"> Aufnahmedatum</div>
                   <div className="text-base text-gray-900">{currentTrack.erschienen || "-"}</div>
                 </div>
 

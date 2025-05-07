@@ -18,9 +18,9 @@ const SCREEN_SCHEDULE = {
 
 // Temporär reduzierte Werte für Testzwecke
 const ACTIVITY_CONFIG = {
-  warningTime: 10 * 1000,       // Erste Warnung nach 10 Sekunden
-  resetTime: 20 * 1000,         // Zurücksetzen nach 20 Sekunden
-  finalWarningTime: 5 * 1000,   // Letzte Warnung 5 Sekunden vor Zurücksetzen
+  warningTime: 300 * 1000,       // Erste Warnung nach 10 Sekunden
+  resetTime: 600 * 1000,         // Zurücksetzen nach 20 Sekunden
+  finalWarningTime: 10 * 1000,   // Letzte Warnung 5 Sekunden vor Zurücksetzen
   audioPlaybackMultiplier: 3,   // 3x länger wenn Audio abgespielt wird
 };
 
